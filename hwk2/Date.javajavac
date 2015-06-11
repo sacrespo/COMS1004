@@ -1,0 +1,64 @@
+//**********************************
+//Date.java
+//Written by Sheryl Crespo
+//szc2103
+//**********************************
+
+//===================================
+//Objects of this class determine what
+//season of a certain date belongs in.
+//===================================
+
+public class Date
+{
+    private int month;
+    private int day;
+    private String season;
+ 
+    //This constructor accepts two ints for input
+    //and initializes the instance variables:
+    //month, day, and season. 
+    public Date(int month, int day)
+    {
+        month = month; 
+        day = day; 
+        findSeason();
+    }
+
+    //This method checks to see what season the date
+    //belongs in. 
+    private void findSeason()
+    {
+        if(month == 1 || month == 2 || month == 3)
+        {
+            season = "Winter"; 
+            else if(month == 4 || month == 5 || month == 6)
+                season = "Spring";
+                else if(month == 7 || month == 8 || month == 9)
+                    season = "Summer";
+                    else if (month == 10 || month == 11 || month == 12)
+                        season = "Fall";
+        else
+             season = "Invalid date."; 
+        } 
+
+        if(month%3 == 0 && day>= 21 && season!="Invalid date.")
+        {
+             if(season == "Winter")
+             {
+                 season = "Spring";
+             else if(season == "Spring")
+                 season = "Summer";
+             else if(season == "Summer")
+                 season = "Fall";
+             else
+                 season = "Winter";
+             }
+        }   
+
+        //This is an accessor method for the IV season.
+        public String getSeason()
+        {
+            return season;
+        }
+}

@@ -1,0 +1,25 @@
+//**********************************
+//DateTester.java
+//Written by Sheryl Crespo
+//szc2103
+//
+//This program tests the Date class.
+//**********************************
+
+import java.util.Scanner;
+
+public class DateTester 
+{
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Please enter a day: ");  
+        int day = input.nextInt(); 
+        System.out.println("Please enter a month: ");
+        int month = input.nextInt(); 
+       
+        Date myDate = new Date(day, month);
+        System.out.println(day + "-" + month + " is in the " + myDate.getSeason()); 
+    } 
+}
